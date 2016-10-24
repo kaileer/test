@@ -1,0 +1,115 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/iscroll-zoom.js"></script>
+	
+	<script src="js/jweixin-1.0.0.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<title>百家号事业部技术专场招聘</title>
+</head>
+
+<body onload="scrollWrap()">
+<!-- loading：start -->
+<div id="loading">
+	<div class="loader-inner ball-scale-multiple">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+	<div class="num"><em class="j_num">0</em>%</div>
+</div>
+<!-- loading：end -->
+<!-- 请将屏幕竖向浏览：start -->
+<div class="orientation_set"><div><img src="images/orientation.png" width="50" alt="" class='translate'><br>请将屏幕竖向浏览</div></div>
+<!-- 请将屏幕竖向浏览：end -->
+<div class='wrapper' id='wrapper'>
+		<i class="arrow translate"></i>
+		<s class="baijiahao"></s>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide step1">
+				<div class="step1_bg1 translate"></div>
+				<div class="step1_bg2 translate"></div>
+				<div class="step1_bg3 translate"></div>
+				<div class="step1_bg4 translate"></div>
+			</div>
+			<div class="swiper-slide step2">
+				<div class="step1_bg1 translate"></div>
+				<div class="step1_bg2 translate"></div>
+				<div class="step2_bg1 translate"></div>
+				<div class="step2_bg2 translate"></div>
+			</div>
+			<div class="swiper-slide step3">
+				<div class="step3_bg1 translate"></div>
+			</div>
+			<div class="swiper-slide step4">
+				<div class="step4_bg1 translate">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="step4_box"><b></b><img src="" width="100%" alt=""></div>
+			</div>
+			<div class="swiper-slide step5">
+				<div class="step5_bg1 translate"></div>
+				<div class="step5_bg2 translate"></div>
+			</div>
+		</div>
+</div>
+<div class="music c3_rotate_360"></div>
+<audio id="app_bgm" src="images/music.mp3"></audio>
+<script src="js/base.js"></script>
+
+<input type="hidden" id="appId" value="<?php echo $return_data['appid'];?>" />
+<input type="hidden" id="timestamp" value="<?php echo $return_data['timestamp'];?>" />
+<input type="hidden" id="nonceStr" value="<?php echo $return_data['noncestr'];?>" />
+<input type="hidden" id="signature" value="<?php echo $return_data['signature'];?>" />
+<script type="text/javascript">
+//分享
+var shareData={
+		title : '欢迎参加百家号事业部技术专场招聘会',
+		desc  : '欢迎参加百家号事业部技术专场招聘会',
+		link  : window.location.href,
+		imgUrl: 'images/share.png'	//图片需加上域名
+	};
+
+/*微信授权*/
+var _appId=document.querySelector('#appId').value;
+var _timestamp=document.querySelector('#timestamp').value;
+var _nonceStr=document.querySelector('#nonceStr').value;
+var _signature=document.querySelector('#signature').value;
+wx.config({
+	debug: false,
+	appId: _appId,
+	timestamp: _timestamp,
+	nonceStr: _nonceStr,
+	signature: _signature,
+	jsApiList: [
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage'
+	]
+});
+wx.ready(function () {
+	wx.checkJsApi({
+		jsApiList: [
+			'onMenuShareTimeline',
+			'onMenuShareAppMessage'
+		],
+		success: function (res) {
+		}
+	});
+	/*分享给朋友*/
+	wx.onMenuShareAppMessage(shareData);
+	/*分享到朋友圈*/
+	wx.onMenuShareTimeline(shareData);
+});
+</script>
+</body>
+</html>
