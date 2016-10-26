@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片查看器</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  	<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/molong.css">
+  	<style>
+*{padding:0;margin: 0;list-style: none;}
+.syswin-swipe-show{display: block;}
+.syswin-swipe-hide{display: none;}
+/***大图****/
+.molong-swiper{  position: fixed;  top:0;  left: 0;  border: 1px solid #777e8c;  overflow: hidden;  z-index: 999;  }
+.molong-swiper-item{  float: left;  overflow: scroll;  background: #333333;  text-align: center;  }
+.molong-swiper-item .img-div{  background-size: contain;  background-position: center;  background-repeat: no-repeat;  }
+
+.molong-img-list { list-style: none; padding: 0; margin: 0;}
+.molong-img-list li { float: left; position: relative;margin-right: 10px;}
+.molong-img-list li .img-bg { display: block; width: 100%; height: 100%;border: none;background-size:cover;background-position: center;background-repeat: no-repeat;}
+  	</style>
+</head>
+<body>
+<ul id="imgList" class="molong-img-list">
+    <li big-url="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/1.jpg"><div class='img-bg' style="background-image:url(http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/1.jpg);"></div></li>
+   <li big-url="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/2.jpg"><div class='img-bg' style="background-image:url(http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/2.jpg);"></div></li>
+	<li big-url="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/3.jpg"><div class='img-bg' style="background-image:url(http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/3.jpg);"></div></li>
+</ul>
+<ul style="position: absolute;top:300px;left:0;z-index: 9999999;">
+    <li><input style="height: 40px;width: 90px;text-align: center;"  type="button" value="addImg" id="addBtn"/></li>
+    <li style="margin-top: 30px;"><input style="height: 40px;width: 90px;text-align: center;" type="button" value="closeImg" id="addClose"/></li>
+</ul>
+<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/zepto.min.js"></script>
+	<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/touch.min.js"></script>
+	<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/319/kbepuwid/molong.js"></script>
+<script>
+ $(function(){
+       //添加大图容器
+       var screenHeight=window.innerHeight;
+       var screenWidth=window.innerWidth;
+       var minImageWidth=screenWidth*0.25;//显示小图的宽高
+       var mySwipe=new molong.photoSwipe({listContainer:$("#imgList")});
+       mySwipe.init();
+       //关闭图片查看器
+       $("#addClose").on("tap",function(){
+           mySwipe.hideBigImg();
+       });
+       $("#addBtn").on("click",function(){
+           console.log(this);
+           var addImg1='<li big-url="imges/4.jpg"><div class="img-bg" style="background-image:url(imges/4.jpg);"></div></li>';
+           mySwipe.listContainer.append(addImg1);
+           mySwipe.listContainer.find(".img-bg").width(minImageWidth);
+           mySwipe.listContainer.find(".img-bg").height(minImageWidth);
+       })
+       //显示大图监听
+       mySwipe.listen("listenShow",function(){
+           alert("打开大图");
+       });
+       //关闭大图监听
+       mySwipe.listen("listenHide",function(){
+           alert("关闭大图");
+       });
+   });
+</script>
+</body>
+</html>
