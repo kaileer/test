@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="three.js"></script>
+</head>
+<body>
+</body>
+<script>
+	var theta = 0,
+		radius = 80
+	var scene = new THREE.Scene();
+	// var camera = new THREE.OrthographicCamera(-10, 10, 5, -5, 1, 120);
+	var camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 1, 1000 );
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	// renderer.setClearColor(0xffffff);
+	document.body.appendChild( renderer.domElement );
+
+	var texture = new THREE.TextureLoader().load( 'aaa.gif' );
+	var geometry = new THREE.BoxBufferGeometry( 8, 8, 8 );
+	var material = new THREE.MeshBasicMaterial({
+			// color: 0x00ffff,
+			map: texture
+		});
+	var mesh = new THREE.Mesh(
+			new THREE.BoxBufferGeometry( 15, 15, 15 ),
+			material
+		);
+	scene.add( mesh);
+	camera.position.set(2, 1, 500);
+
+	for(var i=0;i<10;i++){
+		var mesh = new THREE.Mesh( 
+				geometry,
+				new THREE.MeshBasicMaterial({
+					color: Math.random() * 0xffffff 
+				})
+			);
+		mesh.position.x = Math.random() * 80 - 40;
+		mesh.position.y = Math.random() * 80 - 40;
+		mesh.position.z = Math.random() * 80 - 40;
+		scene.add( mesh );
+	}
+
+	var loop = function () {
+		requestAnimationFrame( loop );
+		theta += 0.1;
+		camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
+		camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
+		camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
+		camera.lookAt( scene.position );
+		// camera.updateMatrixWorld();
+		renderer.render(scene, camera);
+	};
+	loop();
+</script>
+</html>
