@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>林平空中美术馆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<script src="../quanjing_public/js/zepto.min.js"></script>
+	<script src="../quanjing_public/js/tour.js"></script>
+	<link type="text/css" rel="stylesheet" href="../quanjing_public/css/n.css">
+</head>
+<body>
+<div id="pano" style="width:100%;height:100%;">
+	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+	<script>
+		embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"prefer", mobilescale:1.0, passQueryParameters:true});
+	</script>
+</div>
+<div class="poplayer">
+	<div class="pop1 pop">
+		<em class="details_pic"><img src="http://zhongwei.52yingzheng.com/uploads/images/57038e53a80b7.jpg" alt=""></em>
+		<div></div>
+		<ul>
+			<li class="four"></li>
+		</ul>
+	</div>
+</div>
+<div class="bigImg" style="display:none;">
+	<img src="" id="details_bigimg" alt="">
+</div>
+<script>
+var spotArr = {
+		'spot1_1':{
+			'tit':'作品名：<span>《耕日》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot1_2':{
+			'tit':'作品名：<span>《清水湾的牧歌》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>90x95cm</span></h3>'
+		},
+		'spot2_1':{
+			'tit':'作品名：<span>《武夷山》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot2_2':{
+			'tit':'作品名：<span>《秦淮人家》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot2_3':{
+			'tit':'作品名：<span>《归》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot2_4':{
+			'tit':'作品名：<span>耕日》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot3_1':{
+			'tit':'作品名：<span>《杏花村的早晨》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>75x70cm</span></h3>'
+		},
+		'spot3_2':{
+			'tit':'作品名：<span>《追日》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot3_3':{
+			'tit':'作品名：<span>《山中溪源》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot3_4':{
+			'tit':'作品名：<span>《杏花村的早晨》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>75x70cm</span></h3>'
+		},
+		'spot3_5':{
+			'tit':'作品名：<span>《山村红叶》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>96x78cm</span></h3>'
+		},
+		'spot4_1':{
+			'tit':'作品名：<span>《金牛山的印象》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot4_2':{
+			'tit':'作品名：<span>《狂野之恋·勇往直前》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>90x95cm</span></h3>'
+		},
+		'spot5_1':{
+			'tit':'作品名：<span>《天水牧歌》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>96x78cm</span></h3>'
+		},
+		'spot5_2':{
+			'tit':'作品名：<span>《江南水乡》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot5_3':{
+			'tit':'作品名：<span>《金牛山的印象》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot5_4':{
+			'tit':'作品名：<span>《江南水乡》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot6_1':{
+			'tit':'作品名：<span>《通湖岛的早晨》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot6_2':{
+			'tit':'作品名：<span>《远山的呼唤》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>90x95cm</span></h3>'
+		},
+		'spot6_3':{
+			'tit':'作品名：<span>《天水牧歌》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>96x78cm</span></h3>'
+		},
+		'spot6_4':{
+			'tit':'作品名：<span>《白云山处有人家》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot6_5':{
+			'tit':'作品名：<span>《天水牧歌》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>96x78cm</span></h3>'
+		},
+		'spot6_6':{
+			'tit':'作品名：<span>《白云山处有人家》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot6_7':{
+			'tit':'作品名：<span>《别梦一夕》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot6_8':{
+			'tit':'作品名：<span>《狂野之恋·勇往直前》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>90x95cm</span></h3>'
+		},
+		'spot6_9':{
+			'tit':'作品名：<span>《江南水乡》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		},
+		'spot7_1':{
+			'tit':'作品名：<span>《武夷山》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span></span></h3>'
+		},
+		'spot7_2':{
+			'tit':'作品名：<span>《回城路上》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>54x68cm</span></h3>'
+		},
+		'spot7_3':{
+			'tit':'作品名：<span>《七彩平湖》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>54x68cm</span></h3>'
+		},
+		'spot7_4':{
+			'tit':'作品名：<span>《时代里程碑》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span></span></h3>'
+		},
+		'spot7_5':{
+			'tit':'作品名：<span>《玉屏山的黄昏》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>54x68cm</span></h3>'
+		},
+		'spot7_6':{
+			'tit':'作品名：<span>《红树房》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span></span></h3>'
+		},
+		'spot7_7':{
+			'tit':'作品名：<span>《大同岭上红墙》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>54x68cm</span></h3>'
+		},
+		'spot7_8':{
+			'tit':'作品名：<span>《兰亭伊梦》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>54x68cm</span></h3>'
+		},
+		'spot7_9':{
+			'tit':'作品名：<span>《三坊七巷》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>44x48cm</span></h3>'
+		},
+		'spot7_10':{
+			'tit':'作品名：<span>《夕阳艳照》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>40x44cm</span></h3>'
+		},
+		'spot7_11':{
+			'tit':'作品名：<span>《住家虚角楼》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>44x52cm</span></h3>'
+		},
+		'spot7_12':{
+			'tit':'作品名：<span>《春风又绿江南岸》</span>',
+			'name':'林平',
+			'size':'<h3>规格：<span>70x75cm</span></h3>'
+		}
+	}
+</script>
+<script src="../quanjing_public/js/picZoom.js"></script>
+<script src="../quanjing_public/js/nlayer.js"></script>
+</body>
+</html>

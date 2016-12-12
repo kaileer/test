@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no, email=no" />
+<title>登录</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/formJudgmentData/loginInData.js"></script>
+<script src="js/formJudgment.js"></script>
+<script src="js/formJudgmentAjax/loginInAjax.js"></script>
+<script src="js/index.js"></script>
+</head>
+<body>
+    <section class="personCenterHead">
+        <a onClick='javascript:history.go(-1);' class="returnBtn"></a>
+        <h3>个人中心</h3>
+        <a class="menuBtn"></a>
+    </section>
+    <section class="menuMain">
+        <ul>
+            <li>
+                <a href="">
+                    <span class="home">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="messageBorder">
+                    <span class="message">消息</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <span class="personCenter">个人中心</span>
+                </a>
+            </li>
+        </ul>
+
+    </section>
+    <img src="img/logo.png" width="90" height="101" class="logo">
+    <section class="inputPhone">
+    	<div class="phoneInput">
+    		<input type="text" placeholder="请输入账号" id="user">
+    	</div>
+    </section>
+    <section class="inputPhone">
+    	<div class="phoneInput">
+    		<input type="password" placeholder="请输入密码" maxlength="10" id="passWord">
+    	</div>
+    </section>
+    <a class="editSave" id="btn">
+    	登录
+    </a>
+    <section class="userRegister">
+    	<a href="modifyPassword.html">找回密码</a>
+    	<a href="userRegister.html" class="registerNow">立即注册</a>
+    </section>
+</body>
+</html>

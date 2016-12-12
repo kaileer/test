@@ -1,0 +1,126 @@
+<krpano version="1.19" title="">
+
+	<include url="../quanjing_public/skin/vtourskin.xml" />
+
+	<style name="hotspotstyle" width="45" height="45" zoom="true"/>
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- load the soundinterface plugin -->
+	<plugin name="soundinterface"
+	        url.flash="../quanjing_public/plugins/soundinterface.swf"
+	        url.html5="../quanjing_public/plugins/soundinterface.js"
+	        rootpath=""
+	        preload="true"
+	        keep="true"
+	        />
+	<action name="bgsnd_action" autorun="onstart">
+		playsound(bgsnd, '../quanjing_public/images/backgroundmusic.mp3', 0);
+	</action>
+
+	<!-- a button to pause/play the sound -->
+	<plugin name="snd" url="../quanjing_public/images/music_bg.png" align="lefttop" x="10" y="10" alpha="1" scale="0.5" onover="tween(alpha,1);" onout="tween(alpha,1);" keep="true"
+	        crop="0|0|50|50"
+	        onclick="pausesoundtoggle(bgsnd); switch(crop, 0|0|50|50, 0|50|50|50);"
+	        />
+	
+	<scene name="scene_01" title="01" onstart="" thumburl="panos/01.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/01.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/01.tiles/pano_%s.jpg" />
+		</image>
+	
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1_1" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-35.574" atv="7.581" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_2" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-5.109" atv="11.960" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_3" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="29.052" atv="12.845" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_4" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="58.571" atv="9.330" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_5" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="107.633" atv="8.188" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_6" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="162.212" atv="8.277" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_7" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-179.038" atv="9.908" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_8" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-160.218" atv="9.765" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_9" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-142.344" atv="9.111" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_10" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-127.852" atv="8.280" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot1_11" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-109.440" atv="2.015" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+	
+	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/02.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/02.tiles/pano_%s.jpg" />
+		</image>
+	
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot2_1" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-34.125" atv="8.714" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_2" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-8.152" atv="11.132" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_3" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="22.606" atv="10.670" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_4" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="54.045" atv="8.725" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_5" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="67.076" atv="9.678" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_6" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="83.859" atv="10.901" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_7" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="101.170" atv="10.537" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_8" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="156.735" atv="14.905" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_9" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-165.034" atv="15.942" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_10" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-143.526" atv="13.416" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot2_11" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-96.187" atv="9.755" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+	
+	<scene name="scene_03" title="03" onstart="" thumburl="panos/03.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/03.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/03.tiles/pano_%s.jpg" />
+		</image>
+	
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot3_1" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-142.926" atv="7.210" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot3_2" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-126.491" atv="10.767" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot3_3" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-105.072" atv="12.980" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot3_4" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-75.786" atv="13.997" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot3_5" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-52.404" atv="12.568" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/04.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/04.tiles/pano_%s.jpg" />
+		</image>
+	
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot4_1" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="5.078" atv="5.319" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_2" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="14.830" atv="5.323" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_3" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="93.465" atv="3.296" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_4" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="174.805" atv="-5.131" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_5" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-163.717" atv="-5.345" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_6" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-127.417" atv="7.774" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_7" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-106.256" atv="9.858" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_8" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-76.233" atv="10.326" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot4_9" style="hotspotstyle" url="../quanjing_public/images/icon1.png" ath="-53.171" atv="9.221" onclick="js(xmlcallback(get(name)));" />
+		
+	
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,172 @@
+<krpano version="1.19" title="">
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(scene[get(startscene)].name), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- the action for dragging the hotspot - call it once in the ondown event -->
+	<action name="draghotspot">
+		spheretoscreen(ath, atv, hotspotcenterx, hotspotcentery, 'l');
+		sub(drag_adjustx, mouse.stagex, hotspotcenterx);
+		sub(drag_adjusty, mouse.stagey, hotspotcentery);
+		asyncloop(pressed,
+			sub(dx, mouse.stagex, drag_adjustx);
+			sub(dy, mouse.stagey, drag_adjusty);
+			screentosphere(dx, dy, ath, atv);
+			inithotarg('%1', %2, %3, %4, %5, %6, %7, %8, '%9', '%10');
+		  );
+	</action>
+
+	<action name="inithotarg">
+		jscall(JsHotSync('%1', %2, %3, %4, %5, %6, %7, %8, '%9', '%10'));
+	</action>
+
+	<action name="gridding">
+		jscall(getGridding('%1'));
+	</action>
+
+	<scene name="scene_01" title="01" onstart="" thumburl="panos/01.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/01.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/01.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+	
+	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/02.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/02.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot_gridding_1" width="2300" height="800" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="-62.8" atv="0.2" distorted="true" rx="1" ry="63" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2500" height="900" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="178" atv="1.1" distorted="true" rx="1" ry="3.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="700" height="700" scale="0.2" url="../quanjing_public/gridding_images/1.png" ath="-118.7" atv="-0.2" distorted="true" rx="-1" ry="35" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1800" height="800" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="-88.6" atv="0" distorted="true" rx="0" ry="3.5" rz="0" onloaded="gridding(get(name))" />
+
+	</scene>
+	
+	<scene name="scene_03" title="03" onstart="" thumburl="panos/03.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/03.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/03.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot_gridding_1" width="2500" height="900" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="-84.6" atv="1.7" distorted="true" rx="1" ry="-2" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2400" height="900" scale="0.5" url="../quanjing_public/gridding_images/1.png" ath="2" atv="1.2" distorted="true" rx="1.5" ry="0.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1400" height="700" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="116.5" atv="1" distorted="true" rx="1" ry="68" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1400" height="700" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="-150.7" atv="1.2" distorted="true" rx="0.5" ry="64" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_5" width="1400" height="600" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="-178.3" atv="0.7" distorted="true" rx="-0.5" ry="3.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_6" width="900" height="600" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="148.3" atv="0.7" distorted="true" rx="0" ry="-54.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_7" width="700" height="500" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="157.5" atv="0.5" distorted="true" rx="1.5" ry="33.5" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/04.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/04.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot_gridding_1" width="1400" height="780" scale="0.6" url="../quanjing_public/gridding_images/1.png" ath="47.6" atv="1.2" distorted="true" rx="3" ry="-5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2500" height="900" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="131.8" atv="1.3" distorted="true" rx="0" ry="0.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1700" height="800" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="-166.7" atv="1" distorted="true" rx="0.5" ry="-62" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="2100" height="600" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="-128.3" atv="1" distorted="true" rx="0.5" ry="-10.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_5" width="1850" height="900" scale="0.65" url="../quanjing_public/gridding_images/1.png" ath="-46.3" atv="2" distorted="true" rx="3.5" ry="0" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+	<scene name="scene_05" title="05" onstart="" thumburl="panos/05.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/05.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/05.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot_gridding_1" width="1700" height="500" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="-3.2" atv="0.5" distorted="true" rx="-0.5" ry="-8" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="1400" height="750" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="52.6" atv="0.8" distorted="true" rx="0" ry="-64" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1200" height="650" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="77.4" atv="0.7" distorted="true" rx="1.5" ry="1.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1200" height="750" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="112" atv="0.2" distorted="true" rx="0.5" ry="-35" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_5" width="1700" height="850" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="177.5" atv="1.5" distorted="true" rx="1.5" ry="-9.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_6" width="2600" height="600" scale="0.5" url="../quanjing_public/gridding_images/1.png" ath="-59.5" atv="0.5" distorted="true" rx="0.5" ry="-42.5" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+	<scene name="scene_06" title="06" onstart="" thumburl="panos/06.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/06.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/06.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot_gridding_1" width="2400" height="550" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="-175.2" atv="0.5" distorted="true" rx="0.5" ry="-40" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="1200" height="900" scale="0.1" url="../quanjing_public/gridding_images/1.png" ath="-62.4" atv="0.2" distorted="true" rx="1.5" ry="31.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="3800" height="900" scale="0.4" url="../quanjing_public/gridding_images/1.png" ath="17" atv="0.6" distorted="true" rx="1.5" ry="37" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="2500" height="1100" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="-35.8" atv="-0.4" distorted="true" rx="0.5" ry="3.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_5" width="2100" height="1000" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="-129.5" atv="0" distorted="true" rx="-0.5" ry="5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_6" width="1200" height="1400" scale="0.05" url="../quanjing_public/gridding_images/2.png" ath="-75.6" atv="0" distorted="true" rx="-1.3" ry="-50.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_7" width="2200" height="1100" scale="0.2" url="../quanjing_public/gridding_images/1.png" ath="-105" atv="0.4" distorted="true" rx="1.5" ry="70.5" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+	<scene name="scene_07" title="07" onstart="" thumburl="panos/07.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/07.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/07.tiles/pano_%s.jpg" />
+		</image>
+		
+		<hotspot name="spot_gridding_1" width="1700" height="350" scale="0.8" url="../quanjing_public/gridding_images/1.png" ath="-49.7" atv="1" distorted="true" rx="0.5" ry="50" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2600" height="700" scale="0.2" url="../quanjing_public/gridding_images/1.png" ath="-103.3" atv="0.5" distorted="true" rx="1.5" ry="14" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1800" height="900" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="88.4" atv="1.3" distorted="true" rx="2.5" ry="2.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1800" height="900" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="-177.5" atv="1.8" distorted="true" rx="2.5" ry="-2" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+	<scene name="scene_08" title="08" onstart="" thumburl="panos/08.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/08.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/08.tiles/pano_%s.jpg" />
+		</image>
+		
+		<hotspot name="spot_gridding_1" width="2000" height="800" scale="0.8" url="../quanjing_public/gridding_images/1.png" ath="-9.7" atv="-7.8" distorted="true" rx="-8" ry="1.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="1700" height="800" scale="0.45" url="../quanjing_public/gridding_images/1.png" ath="170.7" atv="-1" distorted="true" rx="-1" ry="2.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1200" height="800" scale="0.45" url="../quanjing_public/gridding_images/1.png" ath="80.8" atv="-5.1" distorted="true" rx="-5.5" ry="1.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1100" height="900" scale="0.5" url="../quanjing_public/gridding_images/1.png" ath="-97.8" atv="0.6" distorted="true" rx="1" ry="1" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_5" width="600" height="1000" scale="0.3" url="../quanjing_public/gridding_images/2.png" ath="-133.2" atv="-8.6" distorted="true" rx="-7.5" ry="-56" rz="0" onloaded="gridding(get(name))" />
+	
+	</scene>
+
+</krpano>

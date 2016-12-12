@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no, email=no" />
+<title>二维码</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/index.js"></script>
+
+</head>
+<body>
+    <section class="personCenterHead">
+        <a onClick='javascript:history.go(-1);' class="returnBtn"></a>
+        <h3>个人中心</h3>
+        <a class="menuBtn"></a>
+    </section>
+    <section class="menuMain">
+        <ul>
+            <li>
+                <a href="">
+                    <span class="home">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="messageBorder">
+                    <span class="message">消息</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <span class="personCenter">个人中心</span>
+                </a>
+            </li>
+        </ul>
+
+    </section>
+    <section class="qrCode">
+    	<span>识别下方的二维码进行绑定</span>
+    	<div class="qrCodeImg">
+    		<img src="img/qrcode.png" alt="">
+    	</div>
+    </section>
+</body>
+</html>

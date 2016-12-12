@@ -1,0 +1,157 @@
+@charset "utf-8";
+body,ul,ol,form,input,textarea,th,td,h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size: 12px;}
+html,body{height: 100%;}
+p,dl,dd{margin:0;}
+li{padding:0;list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+a:visited,a:link{text-decoration:none}
+i{font-style:normal}
+/*input,select,textarea{outline:none; border:none; background:none;}*/
+body{-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+
+$themeFontSize:16px;
+$themeFontColor:#989898;
+@mixin lineClamp($lineClamp:2) {
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $lineClamp;
+	-webkit-box-orient: vertical;
+}
+/*********************************艺术著述列表************************/
+.worksList {
+	padding-left: 10px;
+	padding-right: 10px;
+	ul {
+		li {
+			padding: 10px;
+			margin-top: 10px;
+			overflow: hidden;
+			background:#fafafa;
+			border:1px solid #e5e5e5;
+			border-radius:5px;
+			a {
+				div {
+					&.worksTop {
+						overflow: hidden;
+						margin-bottom: 14px;
+						position: relative;
+						img {
+							width: 80px;
+							height: 80px;
+							float: left;
+						}
+						h3 {
+							position: absolute;
+							left: 98px;
+							top: 0;
+							line-height: 24px;
+							font-size: $themeFontSize;
+							color: #303030;
+							@include lineClamp();
+						}
+					}
+					&.worksBottom {
+						div {
+							width: 50%;
+							overflow: hidden;
+							float: left;
+							font-size: $themeFontSize;
+							color: $themeFontColor;
+							&.worksTime {
+								text-align: left;
+							}
+							&.worksFabulous {
+								text-align: right;
+								span {
+									padding-left: 25px;
+									background: url('../img/worksFabulousIco.png') no-repeat;
+									background-size: 21px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.loadMore {
+	width: 100%;
+	height: 68px;
+	text-align: center;
+	line-height: 68px;
+	font-size: $themeFontSize;
+	color: $themeFontColor;
+}
+
+/**************************************艺术著述详情***********************************/
+.worksDetail {
+	padding: 10px;
+	.worksDetailTitle {
+		padding: 27px 18px 6px 18px;
+		border-bottom: 1px solid #dfdfdf;
+		h1 {
+			@include lineClamp(1);
+			font-size:20px;
+			color:#3b3b3b;
+		}
+		span {
+			&.worksTime {
+				display: block;
+				margin-top: 22px;
+				padding-left: 30px;
+				line-height: 24px;
+				background: url('../img/worksTimeIco.png') no-repeat;
+				background-size: 21px;
+				font-size: $themeFontSize;
+				color: $themeFontColor;
+			}
+		}
+	}
+	.worksDetailCont {
+		padding: 15px;
+		line-height: 22px;
+		font-size: $themeFontSize;
+		color: #676767;
+		img {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+	.worksComment {
+		padding: 15px;
+		a {
+			width: 140px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 18px;
+			color: #fff;
+			background:#303030;
+			border-radius:5px;
+			float: left;
+			span {
+				display: inline-block;
+				padding-left:32px;
+				line-height: 50px;
+			}
+			&.articleFabulous {
+				span {
+					background: url('../img/articleFabulousIco.png') 0 center no-repeat;
+					background-size: 22px;
+				}
+			}
+			&.articleShare {
+				float: right;
+				span {
+					background: url('../img/articleShareIco.png') 0 center no-repeat;
+					background-size: 20px;
+				}
+			}
+		}
+	}
+}

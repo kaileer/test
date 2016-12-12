@@ -1,0 +1,120 @@
+<krpano version="1.19" title="">
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(scene[get(startscene)].name), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- the action for dragging the hotspot - call it once in the ondown event -->
+	<action name="draghotspot">
+		spheretoscreen(ath, atv, hotspotcenterx, hotspotcentery, 'l');
+		sub(drag_adjustx, mouse.stagex, hotspotcenterx);
+		sub(drag_adjusty, mouse.stagey, hotspotcentery);
+		asyncloop(pressed,
+			sub(dx, mouse.stagex, drag_adjustx);
+			sub(dy, mouse.stagey, drag_adjusty);
+			screentosphere(dx, dy, ath, atv);
+			inithotarg('%1', %2, %3, %4, %5, %6, %7, '%8');
+		  );
+	</action>
+
+	<action name="inithotarg">
+		jscall(JsHotSync('%1', %2, %3, %4, %5, %6, %7, '%8'));
+	</action>
+
+	<action name="gridding">
+		jscall(getGridding('%1'));
+	</action>
+	
+	<scene name="scene_01" title="01" onstart="" thumburl="panos/01.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/01.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/01.tiles/pano_%s.jpg" />
+		</image>
+	
+		<hotspot name="spot_gridding_1" width="2500" height="900" scale="0.8" url="../quanjing_public/gridding_images/1.png" ath="10.97" atv="-10.95" distorted="true" rx="-11" ry="3.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2500" height="1200" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="119.807" atv="-5.29" distorted="true" rx="-5.5" ry="-15" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="2400" height="1700" scale="0.4" url="../quanjing_public/gridding_images/1.png" ath="-164" atv="-9.79" distorted="true" rx="-10" ry="-1.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="1850" height="1940" scale="0.15" url="../quanjing_public/gridding_images/2.png" ath="-109.6" atv="-4.2" distorted="true" rx="-4" ry="36" rz="0" onloaded="gridding(get(name))" />
+	
+		<hotspot name="spot_1" pictureName="1" width="300" height="180" scale="1" url="img/1.png" distorted="true" ath="-35" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_2" pictureName="2" width="200" height="300" scale="1" url="img/2.png" distorted="true" ath="-9" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_3" pictureName="3" width="100" height="350" scale="1" url="img/3.png" distorted="true" ath="32" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_4" pictureName="4" width="200" height="200" scale="1" url="img/4.png" distorted="true" ath="66" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+	
+		
+	
+	</scene>
+	
+	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/02.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/02.tiles/pano_%s.jpg" />
+		</image>
+	
+		<hotspot name="spot_gridding_1" width="1950" height="1830" scale="0.5" url="../quanjing_public/gridding_images/3.png" ath="-87.38" atv="-14.51" distorted="true" rx="-14.5" ry="-3" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2000" height="2150" scale="0.4" url="../quanjing_public/gridding_images/3.png" ath="-6.11" atv="-14.4" distorted="true" rx="-15" ry="6" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="2920" height="1840" scale="0.45" url="../quanjing_public/gridding_images/1.png" ath="149.26" atv="-14" distorted="true" rx="-14" ry="32" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_4" width="3400" height="1700" scale="0.25" url="../quanjing_public/gridding_images/1.png" ath="64.71" atv="-6.39" distorted="true" rx="-6" ry="25" rz="0" onloaded="gridding(get(name))" />
+
+		<hotspot name="spot_1" pictureName="1" width="300" height="180" scale="1" url="img/1.png" distorted="true" ath="-35" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_2" pictureName="2" width="200" height="300" scale="1" url="img/2.png" distorted="true" ath="-9" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_3" pictureName="3" width="100" height="350" scale="1" url="img/3.png" distorted="true" ath="32" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_4" pictureName="4" width="200" height="200" scale="1" url="img/4.png" distorted="true" ath="66" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		
+	
+	</scene>
+
+	<scene name="scene_03" title="03" onstart="" thumburl="panos/03.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/03.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/03.tiles/pano_%s.jpg" />
+		</image>
+	
+		<hotspot name="spot_gridding_1" width="2300" height="950" scale="0.65" url="../quanjing_public/gridding_images/1.png" ath="-110" atv="-11" distorted="true" rx="-11" ry="20.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="2080" height="2100" scale="0.2" url="../quanjing_public/gridding_images/3.png" ath="-178.67" atv="-7.31" distorted="true" rx="-7.5" ry="-3" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="13500" height="4800" scale="0.15" url="../quanjing_public/gridding_images/1.png" ath="85.07" atv="-10.5" distorted="true" rx="-10.1" ry="6" rz="0" onloaded="gridding(get(name))" />
+
+		<hotspot name="spot_1" pictureName="1" width="300" height="180" scale="1" url="img/1.png" distorted="true" ath="-35" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_2" pictureName="2" width="200" height="300" scale="1" url="img/2.png" distorted="true" ath="-9" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_3" pictureName="3" width="100" height="350" scale="1" url="img/3.png" distorted="true" ath="32" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_4" pictureName="4" width="200" height="200" scale="1" url="img/4.png" distorted="true" ath="66" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+	
+	</scene>
+
+	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/04.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/04.tiles/pano_%s.jpg" />
+		</image>
+	
+		<hotspot name="spot_gridding_1" width="1200" height="900" scale="0.55" url="../quanjing_public/gridding_images/1.png" ath="94" atv="-15.44" distorted="true" rx="-15" ry="0" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_2" width="6600" height="3500" scale="0.3" url="../quanjing_public/gridding_images/1.png" ath="-94" atv="-24.29" distorted="true" rx="-23.1" ry="8.5" rz="0" onloaded="gridding(get(name))" />
+		<hotspot name="spot_gridding_3" width="1750" height="2150" scale="0.25" url="../quanjing_public/gridding_images/2.png" ath="-175.45" atv="-11.7" distorted="true" rx="-12.1" ry="-6" rz="0" onloaded="gridding(get(name))" />
+
+		<hotspot name="spot_1" pictureName="1" width="300" height="180" scale="1" url="img/1.png" distorted="true" ath="-35" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_2" pictureName="2" width="200" height="300" scale="1" url="img/2.png" distorted="true" ath="-9" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_3" pictureName="3" width="100" height="350" scale="1" url="img/3.png" distorted="true" ath="32" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+		<hotspot name="spot_4" pictureName="4" width="200" height="200" scale="1" url="img/4.png" distorted="true" ath="66" atv="0" rx="0" ry="0" rz="0" ondown="draghotspot(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName));" onup="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" onloaded="initHotArg(get(name), get(width), get(height), get(ath), get(atv), get(rx), get(ry), get(pictureName))" />
+	
+	</scene>
+
+</krpano>

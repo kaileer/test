@@ -1,0 +1,127 @@
+<krpano version="1.19" title="">
+
+	<include url="../quanjing_public/skin/vtourskin.xml" />
+
+	<style name="hotspotstyle" width="45" height="45" zoom="true"/>
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- load the soundinterface plugin -->
+	<plugin name="soundinterface"
+	        url.flash="../quanjing_public/plugins/soundinterface.swf"
+	        url.html5="../quanjing_public/plugins/soundinterface.js"
+	        rootpath=""
+	        preload="true"
+	        keep="true"
+	        />
+	<action name="bgsnd_action" autorun="onstart">
+		playsound(bgsnd, '../quanjing_public/images/backgroundmusic.mp3', 0);
+	</action>
+
+	<!-- a button to pause/play the sound -->
+	<plugin name="snd" url="../quanjing_public/images/music_bg.png" align="lefttop" x="10" y="10" alpha="1" scale="0.5" onover="tween(alpha,1);" onout="tween(alpha,1);" keep="true"
+	        crop="0|0|50|50"
+	        onclick="pausesoundtoggle(bgsnd); switch(crop, 0|0|50|50, 0|50|50|50);"
+	        />
+	
+	<scene name="scene_01" title="01" onstart="" thumburl="panos/01.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/01.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="33.008" atv="24.945" linkedscene="scene_02" />
+
+	</scene>
+
+	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/02.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="19.231" atv="30.964" linkedscene="scene_01" />
+		<hotspot name="spot2" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-118.369" atv="30.178" linkedscene="scene_03" />
+
+	</scene>
+
+	<scene name="scene_03" title="03" onstart="" thumburl="panos/03.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/03.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/03.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-0.081" atv="11.654" linkedscene="scene_04" />
+		<hotspot name="spot2" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="39.259" atv="15.325" linkedscene="scene_05" />
+		<hotspot name="spot3" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="55.826" atv="14.109" linkedscene="scene_06" />
+		<hotspot name="spot4" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="141.686" atv="13.719" linkedscene="scene_02" />
+
+	</scene>
+
+	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/04.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/04.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="157.380" atv="26.391" linkedscene="scene_03" />
+
+	</scene>
+
+	<scene name="scene_05" title="05" onstart="" thumburl="panos/05.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/05.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/05.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-19.285" atv="27.106" linkedscene="scene_03" />
+
+	</scene>
+
+	<scene name="scene_06" title="06" onstart="" thumburl="panos/06.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/06.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="46.155" atv="21.014" linkedscene="scene_03" />
+
+	</scene>
+
+
+</krpano>

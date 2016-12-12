@@ -1,0 +1,215 @@
+<krpano version="1.19" title="">
+
+	<include url="../quanjing_public/skin/vtourskin.xml" />
+
+	<style name="hotspotstyle" width="45" height="45" zoom="true"/>
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- load the soundinterface plugin -->
+	<plugin name="soundinterface"
+	        url.flash="../quanjing_public/plugins/soundinterface.swf"
+	        url.html5="../quanjing_public/plugins/soundinterface.js"
+	        rootpath=""
+	        preload="true"
+	        keep="true"
+	        />
+	<action name="bgsnd_action" autorun="onstart">
+		playsound(bgsnd, '../quanjing_public/images/backgroundmusic.mp3', 0);
+	</action>
+
+	<!-- a button to pause/play the sound -->
+	<plugin name="snd" url="../quanjing_public/images/music_bg.png" align="lefttop" x="10" y="10" alpha="1" scale="0.5" onover="tween(alpha,1);" onout="tween(alpha,1);" keep="true"
+	        crop="0|0|50|50"
+	        onclick="pausesoundtoggle(bgsnd); switch(crop, 0|0|50|50, 0|50|50|50);"
+	        />
+	
+	<scene name="scene_01" title="01" onstart="" thumburl="panos/01.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/01.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/01.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="33.008" atv="24.945" linkedscene="scene_02" />
+		
+		<hotspot name="spot1_1" width="70" height="70" url="hot/pic.png" ath="-10" atv="-2" distorted="true" rx="2" ry="10" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_2" width="70" height="70" url="hot/pic.png" ath="0" atv="-2" distorted="true" rx="2" ry="0" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_3" width="70" height="70" url="hot/pic.png" ath="10" atv="-2" distorted="true" rx="2" ry="-10" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_4" width="68" height="68" url="hot/pic.png" ath="20" atv="-2" distorted="true" rx="2" ry="-20" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_5" width="250" height="250" url="hot/pic.png" ath="70" atv="0" distorted="true" rx="0" ry="20" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_6" width="250" height="250" url="hot/pic.png" ath="110" atv="0" distorted="true" rx="0" ry="-20" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot1_7" width="150" height="150" url="hot/pic.png" ath="158" atv="0" distorted="true" rx="0" ry="22" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_1_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="-10" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="0" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="10" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="20" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="70" atv="17" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_6" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="110" atv="17" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_1_7" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="158" atv="13" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/02.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/02.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="19.231" atv="30.964" linkedscene="scene_01" />
+		<hotspot name="spot2" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-118.369" atv="30.178" linkedscene="scene_03" />
+	
+		<hotspot name="spot2_1" width="80" height="80" url="hot/pic.png" ath="55" atv="-2" distorted="true" rx="-2" ry="65" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot2_2" width="95" height="95" url="hot/pic.png" ath="60" atv="-2.3" distorted="true" rx="-2.3" ry="60" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot2_3" width="115" height="115" url="hot/pic.png" ath="67" atv="-2.8" distorted="true" rx="-2.8" ry="53" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot2_4" width="140" height="140" url="hot/pic.png" ath="77" atv="-3.4" distorted="true" rx="-3.4" ry="43" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot2_5" width="140" height="140" url="hot/pic.png" ath="208" atv="-3.4" distorted="true" rx="-3.4" ry="0" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot2_6" width="40" height="40" url="hot/pic.png" ath="256" atv="0" distorted="true" rx="0" ry="30" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_2_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="55" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_2_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="60" atv="6" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_2_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="67" atv="7" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_2_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="77" atv="8" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_2_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="208" atv="8" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_2_6" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="256" atv="6" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_03" title="03" onstart="" thumburl="panos/03.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/03.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/03.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-0.081" atv="11.654" linkedscene="scene_04" />
+		<hotspot name="spot2" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="39.259" atv="15.325" linkedscene="scene_05" />
+		<hotspot name="spot3" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="55.826" atv="14.109" linkedscene="scene_06" />
+		<hotspot name="spot4" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="141.686" atv="13.719" linkedscene="scene_02" />
+	
+		<hotspot name="spot3_1" width="100" height="100" url="hot/pic.png" ath="-20" atv="0" distorted="true" rx="0" ry="30" rz="-1" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_2" width="100" height="100" url="hot/pic.png" ath="20" atv="0" distorted="true" rx="0" ry="-10" rz="-1" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_3" width="70" height="70" url="hot/pic.png" ath="52" atv="0" distorted="true" rx="0" ry="-42" rz="-1" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_4" width="110" height="110" url="hot/pic.png" ath="163" atv="0" distorted="true" rx="0" ry="22" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_5" width="120" height="120" url="hot/pic.png" ath="179" atv="0" distorted="true" rx="0" ry="6" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_6" width="120" height="120" url="hot/pic.png" ath="195.5" atv="0" distorted="true" rx="0" ry="-10.5" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_7" width="110" height="110" url="hot/pic.png" ath="210" atv="0" distorted="true" rx="0" ry="-25" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_8" width="100" height="100" url="hot/pic.png" ath="222" atv="0" distorted="true" rx="0" ry="-37" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_9" width="90" height="90" url="hot/pic.png" ath="231" atv="0" distorted="true" rx="0" ry="-46" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_10" width="90" height="90" url="hot/pic.png" ath="250" atv="0" distorted="true" rx="0" ry="25" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot3_11" width="90" height="90" url="hot/pic.png" ath="300" atv="0" distorted="true" rx="0" ry="-30" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_3_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="-20" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="20" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="52" atv="8" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="163" atv="10" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="179" atv="11" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_6" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="195.5" atv="11" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_7" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="210" atv="10" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_8" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="222" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_9" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="231" atv="8" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_10" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="250" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_3_11" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="300" atv="9" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/04.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/04.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="157.380" atv="26.391" linkedscene="scene_03" />
+	
+		<hotspot name="spot4_1" width="300" height="300" url="hot/pic.png" ath="-2" atv="-5" distorted="true" rx="-5" ry="2" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot4_2" width="200" height="200" url="hot/pic.png" ath="90" atv="-5" distorted="true" rx="-5" ry="0" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot4_3" width="180" height="180" url="hot/pic.png" ath="115" atv="-4.5" distorted="true" rx="-4.5" ry="-25" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot4_4" width="145" height="145" url="hot/pic.png" ath="133" atv="-3.7" distorted="true" rx="-3.7" ry="-43" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot4_5" width="145" height="145" url="hot/pic.png" ath="192" atv="-5" distorted="true" rx="-5" ry="-12" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_4_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="-2" atv="17" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_4_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="90" atv="11" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_4_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="115" atv="10.5" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_4_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="133" atv="9.3" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_4_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="192" atv="8" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_05" title="05" onstart="" thumburl="panos/05.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+	
+		<preview url="panos/05.tiles/preview.jpg" />
+	
+		<image>
+			<cube url="panos/05.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="-19.285" atv="27.106" linkedscene="scene_03" />
+	
+		<hotspot name="spot5_1" width="200" height="200" url="hot/pic.png" ath="15" atv="-3" distorted="true" rx="-3" ry="-15" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_2" width="300" height="300" url="hot/pic.png" ath="70" atv="-3" distorted="true" rx="-3" ry="25" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_3" width="320" height="320" url="hot/pic.png" ath="110" atv="-3" distorted="true" rx="-3" ry="-15" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_4" width="120" height="120" url="hot/pic.png" ath="183" atv="-15" distorted="true" rx="-15" ry="-3" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_5" width="250" height="250" url="hot/pic.png" ath="230" atv="0" distorted="true" rx="0" ry="45" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_6" width="350" height="350" url="hot/pic.png" ath="268" atv="0" distorted="true" rx="0" ry="7" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot5_7" width="285" height="285" url="hot/pic.png" ath="310" atv="0" distorted="true" rx="0" ry="-35" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_5_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="15" atv="14" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="70" atv="19" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="110" atv="19" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="183" atv="-5" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="230" atv="20" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_6" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="268" atv="23" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_5_7" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="310" atv="20" onclick="js(xmlcallback(get(name)));" />
+	
+	</scene>
+
+	<scene name="scene_06" title="06" onstart="" thumburl="panos/06.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/06.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" url="../quanjing_public/skin/new_spotd1_gif.png" onloaded="do_crop_animation(128,128, 60)" ath="46.155" atv="21.014" linkedscene="scene_03" />
+
+		<hotspot name="spot6_1" width="150" height="150" url="hot/pic.png" ath="0" atv="-3" distorted="true" rx="-3" ry="5" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot6_2" width="132" height="132" url="hot/pic.png" ath="70" atv="-2.6" distorted="true" rx="-2.6" ry="30" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot6_3" width="150" height="150" url="hot/pic.png" ath="90" atv="-3" distorted="true" rx="-3" ry="10" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot6_4" width="150" height="150" url="hot/pic.png" ath="112" atv="-3" distorted="true" rx="-3" ry="-12" rz="0" onclick="js(xmlcallback(get(name)));"/>
+		<hotspot name="spot6_5" width="200" height="200" url="hot/pic.png" ath="180" atv="0" distorted="true" rx="0" ry="8" rz="0" onclick="js(xmlcallback(get(name)));"/>
+
+		<hotspot name="spot_6_1" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="0" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_6_2" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="70" atv="8.4" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_6_3" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="90" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_6_4" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="112" atv="9" onclick="js(xmlcallback(get(name)));" />
+		<hotspot name="spot_6_5" style="hotspotstyle" url="../quanjing_public/images/icon4.png" ath="180" atv="16" onclick="js(xmlcallback(get(name)));" />
+
+	</scene>
+
+
+</krpano>

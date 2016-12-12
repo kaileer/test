@@ -1,0 +1,46 @@
+{
+    "spot_1": {
+        "name": "spot_1",
+        "scale": 1,
+        "width": 300,
+        "height": 180,
+        "ath": -35,
+        "atv": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0
+    },
+    "spot_2": {
+        "name": "spot_2",
+        "scale": 1,
+        "width": 200,
+        "height": 300,
+        "ath": -9,
+        "atv": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0
+    },
+    "spot_3": {
+        "name": "spot_3",
+        "scale": 1,
+        "width": 100,
+        "height": 350,
+        "ath": 32,
+        "atv": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0
+    },
+    "spot_4": {
+        "name": "spot_4",
+        "scale": 1,
+        "width": 200,
+        "height": 200,
+        "ath": 66,
+        "atv": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0
+    }
+}

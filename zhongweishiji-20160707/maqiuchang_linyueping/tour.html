@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>林跃平美术馆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<script src="../quanjing_public/js/zepto.min.js"></script>
+	<script src="../quanjing_public/js/tour.js"></script>
+	<link type="text/css" rel="stylesheet" href="../quanjing_public/css/n.css">
+</head>
+<body>
+<div id="pano" style="width:100%;height:100%;">
+	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+	<script>
+		embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"prefer", mobilescale:1.0, passQueryParameters:true});
+	</script>
+</div>
+<div class="poplayer">
+	<div class="pop1 pop">
+		<em class="details_pic"><img src="http://zhongwei.52yingzheng.com/uploads/images/57038e53a80b7.jpg" alt=""></em>
+		<div></div>
+		<ul>
+			<li class="four"></li>
+		</ul>
+	</div>
+</div>
+<div class="bigImg" style="display:none;">
+	<img src="" id="details_bigimg" alt="">
+</div>
+<div class="supply J_link" href="http://yueping.art.yuntumingzhi.cn/">
+	<div>
+		五孚堂水墨书院提供
+		<em>实地场景由</em>
+	</div>
+</div>
+<script>
+var spotArr = {
+		'spot2_1':{
+			'tit':'作品名：<span>《太极》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_2':{
+			'tit':'作品名：<span>《太极》二</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_3':{
+			'tit':'作品名：<span>太极三纸本</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_4':{
+			'tit':'作品名：<span>《太极》四</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_5':{
+			'tit':'作品名：<span>《太极》凤</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>74cm204cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_6':{
+			'tit':'作品名：<span>《天马》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_7':{
+			'tit':'作品名：<span>《太极》龙</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>74×204cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_8':{
+			'tit':'作品名：<span>《太极》五</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot2_9':{
+			'tit':'作品名：<span>诱惑·重生</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_1':{
+			'tit':'作品名：<span>《天马》守护</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>40×70cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_2':{
+			'tit':'作品名：<span>《天马》四君子二</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×50cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_3':{
+			'tit':'作品名：<span>《天马》四君子一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×50cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_4':{
+			'tit':'作品名：<span>《天马》四君子三</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×50cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_5':{
+			'tit':'作品名：<span>《天马》四君子四</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×50cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_6':{
+			'tit':'作品名：<span>《太极》翅膀</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_7':{
+			'tit':'作品名：<span>《天马》穿越</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>50×200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot3_8':{
+			'tit':'作品名：<span>《天马》走出围城</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_1':{
+			'tit':'作品名：<span>《重温旧影》六</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_2':{
+			'tit':'作品名：<span>《重温旧影》四</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_3':{
+			'tit':'作品名：<span>《重温旧影》五</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_4':{
+			'tit':'作品名：<span>《重温旧影》一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_5':{
+			'tit':'作品名：<span>《重温旧影》三</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_6':{
+			'tit':'作品名：<span>《重温旧影》二</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>44×68cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_7':{
+			'tit':'作品名：<span>《天马》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>250×500cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot4_8':{
+			'tit':'作品名：<span>《太极》一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200cm200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_1':{
+			'tit':'作品名：<span>《太极》系列</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70cm204cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_2':{
+			'tit':'作品名：<span>《筋斗云》一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>132×22cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_3':{
+			'tit':'作品名：<span>《筋斗云》四</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>132×22cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_4':{
+			'tit':'作品名：<span>《筋斗云》二</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>132×22cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_5':{
+			'tit':'作品名：<span>《筋斗云》三</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>43×56cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot5_6':{
+			'tit':'作品名：<span>版画《天马》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>43×56cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot6_1':{
+			'tit':'作品名：<span>林跃平-《终山出巡图》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>138×70cm×7</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot6_2':{
+			'tit':'作品名：<span>《二祖调心图》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>145×180cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot6_3':{
+			'tit':'作品名：<span>《香尘漫步》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>185×145cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot6_4':{
+			'tit':'作品名：<span>《观音普照》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×20cm</span></h3>',
+			'money':'<h3>价格：<span class="red">50000</span>元</h3>'
+		},
+		'spot7_1':{
+			'tit':'作品名：<span>《正气图》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>73×143cm</span></h3>',
+			'money':'<h3>价格：<span class="red">200000</span>元</h3>'
+		},
+		'spot7_2':{
+			'tit':'作品名：<span>《神游物外》二</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>660×120cm</span></h3>',
+			'money':'<h3>价格：<span class="red">30000</span>元</h3>'
+		},
+		'spot7_3':{
+			'tit':'作品名：<span>《神游物外》一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>660×120cm</span></h3>',
+			'money':'<h3>价格：<span class="red">30000</span>元</h3>'
+		},
+		'spot7_4':{
+			'tit':'作品名：<span>《神游物外》三</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>660×120cm</span></h3>',
+			'money':'<h3>价格：<span class="red">30000</span>元</h3>'
+		},
+		'spot7_5':{
+			'tit':'作品名：<span>《神游物外》四</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>660×120cm</span></h3>',
+			'money':'<h3>价格：<span class="red">30000</span>元</h3>'
+		},
+		'spot7_6':{
+			'tit':'作品名：<span>《庄子心游》一</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>69×11cm</span></h3>',
+			'money':'<h3>价格：<span class="red">30000</span>元</h3>'
+		},
+		'spot7_7':{
+			'tit':'作品名：<span>《映日荷花》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>200×200cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot8_1':{
+			'tit':'作品名：<span>《事事如意》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>137×70cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot8_2':{
+			'tit':'作品名：<span>《封官得令》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>240×120cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot9_1':{
+			'tit':'作品名：<span>《酸乾坤》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>160×148cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot9_2':{
+			'tit':'作品名：<span>《庄子逍遥游》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>138×25cm</span></h3>',
+			'money':'<h3>价格：<span class="red">50000</span>元</h3>'
+		},
+		'spot9_3':{
+			'tit':'作品名：<span>慈航观音</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×18cm</span></h3>',
+			'money':'<h3>价格：<span class="red">100000</span>元</h3>'
+		},
+		'spot9_4':{
+			'tit':'作品名：<span>《明泉清风》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>138×50cm</span></h3>',
+			'money':'<h3>价格：<span class="red">100000</span>元</h3>'
+		},
+		'spot9_5':{
+			'tit':'作品名：<span>《喜从天降》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>68×43cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot9_6':{
+			'tit':'作品名：<span>《听秋风》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>66×31cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot9_7':{
+			'tit':'作品名：<span>《慈云观音》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>130×42cm</span></h3>',
+			'money':'<h3>价格：<span class="red">150000</span>元</h3>'
+		},
+		'spot9_8':{
+			'tit':'作品名：<span>《子乐图》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>115×55cm</span></h3>',
+			'money':'<h3>价格：面议　<a href="tel:13522160502">13522160502</a></h3>'
+		},
+		'spot9_9':{
+			'tit':'作品名：<span>《迎福图》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>97×60cm</span></h3>',
+			'money':'<h3>价格：<span class="red">150000</span>元</h3>'
+		},
+		'spot9_10':{
+			'tit':'作品名：<span>济公</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>118×55cm</span></h3>',
+			'money':'<h3>价格：<span class="red">200000</span>元</h3>'
+		},
+		'spot9_11':{
+			'tit':'作品名：<span>《元神出窍》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×22cm</span></h3>',
+			'money':'<h3>价格：<span class="red">200000</span>元</h3>'
+		},
+		'spot10_1':{
+			'tit':'作品名：<span>《幻·觉》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×70cm</span></h3>',
+			'money':'<h3>价格：<span class="red">100000</span>元</h3>'
+		},
+		'spot10_2':{
+			'tit':'作品名：<span>《觉》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×70cm</span></h3>',
+			'money':'<h3>价格：<span class="red">100000</span>元</h3>'
+		},
+		'spot10_3':{
+			'tit':'作品名：<span>《幻》</span>',
+			'name':'林跃平',
+			'size':'<h3>规格：<span>70×70cm</span></h3>',
+			'money':'<h3>价格：<span class="red">100000</span>元</h3>'
+		}
+	}
+</script>
+<script src="../quanjing_public/js/picZoom.js"></script>
+<script src="../quanjing_public/js/nlayer.js"></script>
+</body>
+</html>

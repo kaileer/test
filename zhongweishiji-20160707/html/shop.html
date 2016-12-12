@@ -1,0 +1,127 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/libs/zepto.min.js"></script>
+	<script type="text/javascript" src="js/libs/iscroll-zoom.js"></script>
+	<script type="text/javascript" src="js/libs/photoswipe.min.js"></script>
+	<title>家卫美术馆</title>
+</head>
+<body onload="scrollWrap()">
+
+<div class='wrapper' id='wrapper'>
+	<div id='scroller'>
+		<div class="shop_details">
+			<div class="details_pic">
+				<span>
+				    <a href="images/header.jpg" data-size="640x540">
+				        <img src="images/header.jpg" alt="" />
+				    </a>
+				</span>
+			</div>
+			<div class="details_txt">
+				<h2>《松间逸趣松间逸趣》</h2>
+				<ul>
+					<li>作者：林家卫</li>
+					<li>未知：纸本设色</li>
+					<li>规格：35×46cm</li>
+				</ul>
+				<div>价格：<span>5678</span>元</div>
+				<p>林家卫：林家卫，事雕塑。余尝观之，兹能以形写神，尽人情万物之状。近读其文，时而激亢，时而嗟叹，时而温婉，时而长啸，虽稚气爰爰也是丹心一片。真性情所兴发。今日集文出版，托吾代序，既为“心语”便首在真诚。家卫若能执此“赤子心”，潜心读书，日后必有进益。</p>
+				<p>李新永：书法篆隶独到,由印文入书,世人多称<刀马篆>,，字体追显金及石铭文风格,苍劲古朴又挥洒淋漓，快驰钝慢敛张有度、书艺娴熟纯深,每字都蕴涵音乐之律境.款字行书更见颜体风骨;与篆隶字体同辉,独具风格自成一体.</p>
+			</div>
+			<div class="details_more">
+				<h3>您可能还喜欢</h3>
+				<div class="J_link" href="">
+					<dl>
+						<dt><img src="images/header.jpg" alt=""></dt>
+						<dd class="tit">题标题标题</dd>
+						<dd class="money">金额标题标题</dd>
+					</dl>
+				</div>
+				<div class="J_link" href="">
+					<dl>
+						<dt><img src="images/header.jpg" alt=""></dt>
+						<dd class="tit">题标题标题</dd>
+						<dd class="money">金额标题标题</dd>
+					</dl>
+				</div>
+				<div class="J_link" href="">
+					<dl>
+						<dt><img src="images/header.jpg" alt=""></dt>
+						<dd class="tit">题标题标题</dd>
+						<dd class="money">金额标题标题</dd>
+					</dl>
+				</div>
+				<div class="J_link" href="">
+					<dl>
+						<dt><img src="images/header.jpg" alt=""></dt>
+						<dd class="tit">题标题标题</dd>
+						<dd class="money">金额标题标题</dd>
+					</dl>
+				</div>
+				<s class='fix'></s>
+				<var class="J_link">查看更多商品</var>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="details_btn">
+	<a href="javascript:;">加入购物车</a>
+	<a href="info.html">立即购买</a>
+</div>
+<a href="javascript:;" class="link_car"><img src="images/shop_icon1.png" alt=""></a>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="关闭 (Esc)"></button>
+                <button class="pswp__button pswp__button--fs" title="全屏"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="index.html" class="link_home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAABECAMAAADz2EhKAAAAnFBMVEUAAAAAAADr6+v29vb9/f1paWnT09MXFxfh4eHa2togICAAAAAQEBDS0tLz8/MAAAAAAAA/Pz8AAAAAAAAAAAAAAABWVlbKysqnp6cAAADn5+fU1NStra1OTk4oKCj6+vrw8PDj4+PFxcW+vr64uLigoKCRkZFGRkYyMjIAAAAAAAAAAAAAAAAAAACUlJR7e3ttbW0AAAAAAAD///+iFyEyAAAAM3RSTlOgAPP6/r3opu/rqAOk5/lrNbGcjVY5t+PUifHo1rWq/Pfw4d7a0cuzrZiPjogzzMO/XVwAWym9AAABgklEQVRYw+3Ya2+CMBTG8SPgqlYBRQHvzrub7na+/3fbaUNak82Ewtmr8U9ISEl+4W0faKlkHCUjqNrlGsVSO1q7TaFu01uhyTFwNJZaI4yHU1oMXMUtkK9s2ouECbBFVsSHkZXwYWSN+DCymv6ufoZZnw0bIOKgz4dpjgsL8kBxTFgb2ppjwkBzc1EPEwVWcF1RC+sazHAcmOVYMMuxYJZjwSzHgFmu03PFeh2DleCcsHbWyT6qcBZDD4pyVOVQ5KHi3DCrLek9oCc1muZcMD8wWo54gAPiwmiBrzgHbOkbba9+K0XcG80/hYizVSmNsHAJVjsiPr/R4dFqMAzpsJTmYTiEO01sULURd5rivFLaeUGY0ajhjLDZCaymDhdnKJ/VqPQ9BcpqOmfN1miN1mg82noFv7VaV9BCRH/+9LM5fQidtR0+buesiW3wwAq2Apr+TxfW2+6VUUt4VwLeBYN3XWFdfthXqZb8YsE+pdKomGHNixVULI2TOkvjKIkmUjvfC6A6+oMGPqYAAAAASUVORK5CYII=" alt=""></a>
+<script src="js/utils/base.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

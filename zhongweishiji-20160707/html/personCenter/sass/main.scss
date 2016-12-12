@@ -1,0 +1,424 @@
+@charset "utf-8";
+$themeFontColor:#303030;
+$themeFontSize:18px;
+
+$themeBgColor:#ededed;
+$themeOptionBg:#f7f7f7;
+
+$themeOptionH:60px;
+$themeOptionW:100%;
+
+$icoBg:'../img/';
+$icoSize:35px;
+
+body,ul,ol,form,input,textarea,th,td,h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size: 12px;}
+html,body{height: 100%;}
+p,dl,dd{margin:0;}
+li{padding:0;list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+a:visited,a:link{text-decoration:none}
+i{font-style:normal}
+input{-webkit-appearance: none;}
+input:focus,button:focus,button:active{outline: none;}
+body{font-family: '黑体' SimHei,HeiTi SC,helvetica neue LT,'微软雅黑',Microsoft YaHei;-moz-user-select:none;-webkit-user-select:none;user-select:none; background: $themeBgColor;}
+
+
+.jumpIco {
+	float: right;
+	width: 20px;
+	height: 100%;
+	background: url(#{$icoBg}jumpIco.png) no-repeat center $themeOptionBg;
+	background-size:10px 17px;
+}
+.publicClass {
+	padding: 10px 26px 10px 26px;
+	font-size: $themeFontSize;
+	color: $themeFontColor;
+	margin-top:1px;
+	background-color: $themeOptionBg;
+	overflow: hidden;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: $themeFontColor;
+	}
+	i{
+		@extend .jumpIco;
+	} 
+}
+.input {
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	padding: 10px;
+	background: #fff;
+	input {
+		border: 0;
+		width: 100%;
+		background: #fff;
+	}
+}
+/*********************个人中心首页***********************/
+.personCenterHead {
+	width: $themeOptionW;
+	height: 50px;
+	background: #303030;
+	position: relative;
+	h3 {
+		font-size: $themeFontSize;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		text-align: center;
+		line-height: 50px;
+		color: #e5e5e5;
+	}
+	a {
+		display: block;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		&.returnBtn {
+			background: url(#{$icoBg}artist_icon19.png) no-repeat center/10px 17px;
+			left: 0;
+			z-index: 2;
+		}
+		&.menuBtn {
+			background: url(#{$icoBg}artist_icon18.png) no-repeat center/20px 18px;
+			right: 0;
+			z-index: 2;
+		}
+	}
+}
+.menuMain {
+	width: $themeOptionW;
+	height: 50px;
+	border-top: 1px solid #3f3f3f;
+	background: #303030;
+	display: none;
+	
+	ul{
+		width: 100%;
+		overflow: hidden;
+		li {			
+			float: left;
+			width: calc(100% / 3);
+			height: 46px;
+			&.active {
+				border-bottom: 4px solid #7e7e7e;
+			}
+			a {
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				font-size:14px;
+				color: $themeBgColor;
+				margin-top: 10px;
+				&.messageBorder {
+					width: calc(100% - 2px);
+					border-left: 1px solid #3f3f3f;
+					border-right: 1px solid #3f3f3f;
+				}
+				span {
+					display: block;
+					width: 28px;
+					height: 30px;
+					margin: 0 auto;
+					padding-left: 27px;
+					&.home {
+						background: url(#{$icoBg}artist_icon15.png) no-repeat left center/20px 17px;
+					}
+					&.message {
+						background: url(#{$icoBg}artist_icon16.png) no-repeat left center/16px 17px;
+					}
+					&.personCenter {
+						width: 70px;
+						background: url(#{$icoBg}artist_icon17.png) no-repeat left center/14px 17px;
+					}
+				}
+			}
+		}
+	}
+
+}
+.headData {
+	@extend .publicClass;
+	margin: 0;
+	height: 60px;
+	line-height: 60px;
+
+	span {
+		float: left;
+		margin-left: 12px;
+	}
+}
+.headImg {
+	float: left;
+	width: 58px;
+	height: 58px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	>div {
+		box-sizing: border-box;
+		width: 60px !important;
+		height: 60px !important;
+	}
+}
+.bindWeChat {
+	@extend .publicClass;
+	padding:17px 26px 17px 26px;
+	span {
+		&.personAttr {
+			float: left; 
+			padding-left:30px;
+			background: url(#{$icoBg}artist_icon20.png) no-repeat left center/20px 16px;
+		}
+		&.isPhone {
+			float: left; 
+			margin-left: 8px;
+			display: inline;
+			background: url(#{$icoBg}artist_icon22.png) no-repeat left center/15px 15px;
+			width: 20px;
+			height: 26px;
+		}
+	}
+}
+.bindPhone {
+	@extend .publicClass;
+	padding:17px 26px 17px 26px;
+	line-height:24px;
+	span {
+		&.personAttr {
+			float: left;
+			padding-left:30px;
+			background: url(#{$icoBg}artist_icon21.png) no-repeat left center/18px 18px;
+		}
+		&.isPhone {
+			float: left; 
+			margin-left: 8px;
+			display: inline;
+			background: url(#{$icoBg}artist_icon22.png) no-repeat left center/15px 15px;
+			width: 20px;
+			height: 26px;
+		}
+		&.phone {
+			float: right;
+			font-size: 12px;
+			margin-right: 5px;
+			display: inline;
+		}
+	}
+}
+
+.exitLogin {
+	position: fixed;
+	bottom: 0;
+	width: $themeOptionW;
+	height: $themeOptionH;
+	text-align: center;
+	line-height: $themeOptionH;
+	font-size: 18px;
+	color: #fff;
+	background: #e39393;
+}
+
+/**************************编辑资料********************/
+.editHead {
+	@extend .publicClass;
+	margin: 0;
+	height: 60px;
+	line-height: 60px;
+	>span {
+		float: left;
+		width: 60px;
+	}
+	.rEditImg {
+		float: right;
+		margin-right: 5px;
+		display: inline;
+		>div {
+			height: 60px !important;
+			width: 60px !important;
+		}
+	}
+}
+.editName {
+	@extend .publicClass;
+	background-image:none;
+	position: relative;
+	>span {
+		float: left;
+		width: 60px;
+		line-height: 36px;
+	}
+	.rEditName {
+		float: left;
+		width: calc(100% - 64px);
+		input {
+			width: calc(100% - 22px);
+			@extend .input;
+		}
+	}
+}
+.editSave {
+	display: block;
+	width: $themeOptionW;
+	height: 50px;
+	margin-top: 8px;
+	background: $themeOptionBg;
+	color: $themeFontColor;
+	font-size: 18px;
+	text-align: center;
+	line-height: 50px;
+}
+/*********************获取验证码**************************/
+.inputPhone {
+	@extend .publicClass;
+	padding: 10px;
+	.phoneInput {
+		@extend .input;
+		line-height: 12px;
+
+	}
+}
+.getCode {
+	@extend .publicClass;
+	padding: 10px;
+	.inputCode {
+		@extend .input;
+		width: calc(100% - 140px);
+		float: left;
+		line-height: 12px;
+	}
+	button {
+		float: right;
+		width: 110px;
+		height: 38px;
+		border-radius: 5px;
+		background: #303030;
+		color: #fff;
+		font-size: 14px;
+		border: 0;
+	}
+}
+/*************************二维码*********************/
+.qrCode {
+	width: 250px;
+	height: 288px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	span {
+		display: block;
+		color: $themeFontColor;
+		font-size: $themeFontSize;
+		text-align: center;
+	}
+	.qrCodeImg {
+		margin-top: 22px;
+		border: 1px solid #d8d8d8;
+		padding: 13px;
+		border-radius: 5px;
+		img {
+			width: 220px;
+			height: 220px;
+		}
+	}
+}
+/**************************登录**********************/
+.logo {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.userRegister {
+	width: 100%;
+	height: 46px;
+	font-size: $themeFontSize;
+	line-height: 46px;
+	overflow: hidden;
+	a {
+		color: #e39393;
+		padding-left: 10px;
+		padding-right: 10px;
+		float: left;
+		font-size: 12px;
+		&.registerNow {
+			float: right;
+		}
+	}
+}
+/**************************注册*********************/
+.registerSubmit {
+	margin-top: 133px;
+}
+.existingAccount {
+	text-align: center;
+	a {
+		float: initial;
+	}
+}
+/*************************上传头像插件*****************/
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	padding: 10px 15px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+.dig_box {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0,0,0,.8);
+	div {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+
+		width: 150px;
+		height: auto;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		-webkit-transform: translate(-50%,-50%);
+		text-align: center;
+
+		color: #fff;
+		border-radius: 10px;
+		background: #f46868;
+	}
+}
