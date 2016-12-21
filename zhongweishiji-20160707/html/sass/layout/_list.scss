@@ -1,0 +1,311 @@
+/*列表页面*/
+
+.link_ps {
+    position: fixed;
+    z-index: 99999;
+    top: 45px;
+    right: 5px;
+
+    width: 68px;
+    height: 34px;
+}
+
+.shop_list {
+    /*width:100%;*/
+    height: 100%;
+    padding: 5px 10px 40px 10px;
+
+    background: #f7f7f7;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        -webkit-transform: translate(-50%, -50%);
+    }
+    dl {
+        position: relative;
+
+        overflow: hidden;
+
+        margin-top: 5px;
+        padding: 5px;
+
+        background: #fff;
+    }
+    dt {
+        position: relative;
+
+        float: left;
+        overflow: hidden;
+
+        width: 90px;
+        height: 90px;
+        var {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, .5) url(#{$BGURL}play.png) no-repeat (center / auto) 70%;
+        }
+    }
+    dd {
+        padding-left: 100px;
+    }
+    h3 {
+        font-size: 15px;
+        line-height: 27.6px;
+
+        overflow: hidden;
+
+        height: 27.6px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        color: #333;
+    }
+    p {
+        font-size: 12px;
+        line-height: 20px;
+
+        height: 20px;
+
+        color: #666;
+    }
+}
+
+.shop_newList {
+    overflow: hidden;
+    /*width:100%;*/
+
+    height: 100%;
+    padding: 5px 10px 40px 10px;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        -webkit-transform: translate(-50%, -50%);
+    }
+    dl {
+        position: relative;
+
+        float: left;
+        overflow: hidden;
+
+        -webkit-box-sizing: border-box;
+        width: 50%;
+        min-height: 70px;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    dt {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 100%;
+        height: 70px;
+
+        background: #d8d8d8;
+        var {
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, .5) url(#{$BGURL}play.png) no-repeat (center / auto) 70%;
+        }
+    }
+    h3 {
+        font-size: 14px;
+        line-height: 16px;
+
+        display: -webkit-box;
+        overflow: hidden;
+
+        height: 32px;
+        margin-top: 10px;
+
+        text-overflow: ellipsis;
+
+        color: #333;
+
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    p {
+        font-size: 12px;
+        line-height: 20px;
+
+        height: 22px;
+
+        color: #666;
+    }
+    &.ARTS_list p {
+        height: auto;
+    }
+    div {
+        font-size: 10px;
+
+        height: 14px;
+
+        color: #666;
+    }
+    span {
+        font-size: 10px;
+
+        display: block;
+
+        padding-left: 20px;
+
+        color: #666;
+        background: url(#{$BGURL}list_icon1.png) no-repeat left center;
+        &:last-child {
+            background-image: url(#{$BGURL}list_icon2.png);
+        }
+    }
+}
+
+.page {
+    position: fixed;
+    z-index: 2;
+    top: 10px;
+    left: 0;
+
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 24px;
+    padding: 0 10px;
+    div {
+        overflow: hidden;
+
+        width: 100%;
+        height: 100%;
+
+        color: #555;
+        border: 1px solid #dcdcdc;
+        border-radius: 99px;
+        background: #eee;
+    }
+    input {
+        line-height: 24px;
+
+        -webkit-box-sizing: border-box;
+        width: 80%;
+        height: 100%;
+        padding: 0 10px;
+
+        border: none;
+        background: none;
+
+        -webkit-appearance: none;
+    }
+    em {
+        line-height: 24px;
+
+        float: right;
+
+        width: 24px;
+        height: 100%;
+        margin-right: 10px;
+
+        background: url(#{$BGURL}list_icon4.png) no-repeat (center / 16px) auto;
+    }
+}
+
+.pt40 {
+    padding-top: 41px;
+}
+
+.pt36 {
+    padding-top: 36px;
+}
+
+.pt55 {
+    padding-top: 55px;
+}
+
+.shop_list_museum {
+    background: #fff;
+    dl {
+        border: 1px solid #ededed;
+        border-radius: 5px;
+    }
+    .text {
+        font-size: 18px;
+
+        display: -webkit-box;
+
+        height: 90px;
+        padding-right: 45px;
+        padding-left: 20px;
+
+        color: #303030;
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+    }
+    .icon {
+        position: absolute;
+        top: 40px;
+        right: 15px;
+
+        width: 10px;
+        height: 17px;
+        padding: 0;
+
+        background: url(#{$BGURL}artist_icon20.png) no-repeat center/10px 17px;
+    }
+}
+
+.head-seek {
+    height: 35px;
+
+    @extend .page;
+    dt {
+        font-size: 20px;
+        line-height: 38px;
+
+        float: left;
+
+        padding-left: 22px;
+
+        color: #a7a6a6;
+        background: url(#{$BGURL}artist_icon19.png) no-repeat left center/13px 22px;
+    }
+    dd {
+        position: relative;
+
+        margin-left: 90px;
+        input {
+            line-height: 35px;
+
+            width: 100%;
+            height: 35px;
+
+            color: #a7a6a6;
+            border-radius: 5px;
+            background: #eeeff3;
+        }
+        em {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            width: 16px;
+            height: 35px;
+
+            background: url(#{$BGURL}list_icon4.png) no-repeat center/16px 16px;
+        }
+    }
+}

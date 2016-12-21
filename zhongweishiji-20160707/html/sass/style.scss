@@ -1,0 +1,29 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+/*compass*/
+@import "compass";
+/*精灵图*/
+// @import "compass/utilities/sprites";
+// @import "../images/*.png";
+/*base*/
+@import "base/_reset";
+@import "base/_public";
+/*components*/
+@import "components/_iscroll";  //iscroll
+@import "components/_dialog";  //dialog
+@import "components/_photoswiper";  //图集
+@import "components/_default-skin";  //图集dialog
+
+/*layout*/
+@import "layout/_index";  //首页
+@import "layout/_list";  //列表页面
+@import "layout/_details";  //详情页面
+// @import "layout/_receivingMsg";  //收货信息
+// @import "layout/_receiving";  //收货
+// @import "layout/_shoppingCart";  //购物车
+@import "layout/_artistRelationship";  //艺术圈
+@import "layout/_message";  //消息
+

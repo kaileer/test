@@ -1,0 +1,50 @@
+#scroller-pullDown,
+#scroller-pullUp {
+	font-size: 14px;
+	/*border-bottom: 1px solid #ccc;*/
+	font-weight: bold;
+	line-height: 40px;
+
+	position: absolute;
+	left: 0;
+
+	width: 100%;
+	/*background: #fff;*/
+	height: 40px;
+	padding: 5px 10px;
+
+	text-align: center;
+
+	color: #888;
+}
+
+#scroller-pullDown {
+	top: -40px;
+}
+
+#scroller-pullUp {
+	bottom: -40px;
+}
+
+#scroller-pullDown .pull-up-msg,
+#scroller-pullUp .pull-down-msg {
+	padding-left: 20px;
+}
+
+#scroller-pullDown .pull-down-icon,
+#scroller-pullUp .pull-up-icon {
+	font-size: 1.4;
+
+	display: inline-block;
+
+	-webkit-transition-duration: 500ms;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transform: rotate(0deg);
+
+	color: #f00;
+}
+
+#scroller-pullDown .pull-down-icon.reverse_icon,
+#scroller-pullUp .pull-up-icon.reverse_icon {
+	-webkit-transform: rotate(-180deg);
+}

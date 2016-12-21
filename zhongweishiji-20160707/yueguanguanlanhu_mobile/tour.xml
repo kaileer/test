@@ -40,7 +40,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="160.391" atv="26.957" linkedscene="scene_02" />
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="140" atv="26.957" linkedscene="scene_02" />
 	
 	</scene>
 	
@@ -55,8 +55,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="78.073" atv="8.466" linkedscene="scene_01" />
-		<hotspot name="spot2" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-89.056" atv="20.172" linkedscene="scene_03" />
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="42" atv="29" linkedscene="scene_03" />
 	
 	</scene>
 	
@@ -71,10 +70,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="93.170" atv="20.718" linkedscene="scene_02" />
-		<hotspot name="spot2" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-177.691" atv="18.906" linkedscene="scene_04" />
-		<hotspot name="spot3" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-115.065" atv="16.388" linkedscene="scene_08" />
-	
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="140" atv="15" linkedscene="scene_04" />
 	</scene>
 
 	<scene name="scene_04" title="04" onstart="" thumburl="panos/04.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -88,9 +84,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="135.374" atv="17.214" linkedscene="scene_03" />
-		<hotspot name="spot2" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-137.736" atv="17.589" linkedscene="scene_05" />
-	
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="135.374" atv="28" linkedscene="scene_05" />
 	</scene>
 
 	<scene name="scene_05" title="05" onstart="" thumburl="panos/05.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -104,8 +98,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="80.038" atv="19.497" linkedscene="scene_04" />
-		<hotspot name="spot2" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-11.485" atv="20.590" linkedscene="scene_06" />
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-100" atv="19.497" linkedscene="scene_06" />
 	</scene>
 
 	<scene name="scene_06" title="06" onstart="" thumburl="panos/06.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -119,9 +112,7 @@
 		</image>
 	
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-33.579" atv="24.247" linkedscene="scene_05" />
-		<hotspot name="spot2" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-124.816" atv="24.703" linkedscene="scene_07" />
-
+		<hotspot name="spot1" url="../quanjing_public/skin/new_spotd1_gif.png"  onloaded="do_crop_animation(128,128, 60)" style="skin_hotspotstyle" ath="-124.816" atv="24.703" linkedscene="scene_01" />
 	</scene>
 
 </krpano>

@@ -1,0 +1,192 @@
+$MessageBC: #e5e5e5;
+$MessageTC: #989898;
+
+.message-tab {
+    line-height: 60px;
+
+    position: relative;
+
+    height: 60px;
+
+    background: #f7f7f7;
+    li:first-child i {
+        background: url(#{$BGURL}artist_icon13.png) no-repeat center/20px 20px;
+    }
+    li:first-child.cur i {
+        background: url(#{$BGURL}artist_icon12.png) no-repeat center/20px 20px;
+    }
+    li:last-child i {
+        background: url(#{$BGURL}artist_icon11.png) no-repeat center/20px 20px;
+    }
+    li:last-child.cur i {
+        background: url(#{$BGURL}artist_icon14.png) no-repeat center/20px 20px;
+    }
+    li {
+        font-size: 18px;
+
+        float: left;
+
+        width: 50%;
+
+        text-align: center;
+
+        color: #303030;
+        i {
+            position: relative;
+            top: 3px;
+
+            display: inline-block;
+
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        &.cur {
+            color: #e39393;
+        }
+    }
+    &:before {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+
+        width: 1px;
+        height: 50px;
+
+        content: '';
+
+        background: #dfdfdf;
+    }
+}
+
+.message-comment {
+    margin-top: 8px;
+    padding: 0 10px;
+    > p {
+        font-size: 18px;
+
+        padding-top: 45%;
+
+        text-align: center;
+
+        color: #989898;
+    }
+    >div {
+        padding: 10px;
+        margin-bottom: 8px;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+        background: #fafafa;
+        p {
+            font-size: 14px;
+
+            padding-bottom: 10px;
+
+            word-break: break-all;
+
+            color: #303030;
+            border-bottom: 1px solid $MessageBC;
+        }
+        dl {
+            -webkit-box-sizing: border-box;
+            margin-top: 10px;
+            padding: 0 5px 10px 5px;
+
+            color: $MessageTC;
+            border: 1px solid $MessageBC;
+            background: #fff;
+            dt {
+                font-size: 14px;
+                line-height: 30px;
+
+                word-break: break-all;
+            }
+            dd {
+                font-size: 12px;
+
+                text-align: right;
+            }
+        }
+    }
+}
+.message-reply {
+    > p {
+        font-size: 18px;
+
+        padding-top: 45%;
+
+        text-align: center;
+
+        color: #989898;
+    }
+    dl {
+        margin-top: 8px;
+        padding: 10px 10px 15px 10px;
+
+        background: #f7f7f7;
+        dt {
+            float: left;
+
+            width: 48px;
+            height: 48px;
+
+            border: 1px solid #dfdfdf;
+            border-radius: 4px;
+            background: #ebebeb;
+        }
+        dd {
+            padding-left: 85px;
+            h3 {
+                font-size: 16px;
+
+                color: #e3b693;;
+                span {
+                    font-size: 12px;
+
+                    display: inline-block;
+
+                    padding-left: 10px;
+
+                    color: #303030;
+                }
+            }
+            p {
+                font-size: 14px;
+
+                word-break: break-all;
+
+                color: #303030;
+            }
+            div {
+                font-size: 14px;
+
+                position: relative;
+
+                margin-top: 10px;
+                padding: 10px;
+
+                word-break: break-all;
+
+                color: #989898;
+                border: 1px solid #dbdbdb;
+                border-radius: 5px;
+                background: #efefef;
+                &:before {
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+
+                    width: 0;
+                    height: 0;
+
+                    content: '';
+
+                    border-top: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 8px solid #dbdbdb;
+                    border-left: 8px solid transparent;
+                }
+            }
+        }
+    }
+}

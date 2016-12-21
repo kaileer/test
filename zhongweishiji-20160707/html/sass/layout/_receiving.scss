@@ -1,0 +1,228 @@
+
+/*收货*/
+
+.shelf_head
+{
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 33px;
+
+	background: #f7f7f7;
+	a
+	{
+		font-size: 12px;
+		line-height: 30px;
+
+		float: left;
+
+		width: 50%;
+		height: 30px;
+
+		text-align: center;
+
+		color: #666;
+		border: none;
+		&.cur
+		{
+			color: #f46868;
+			border-bottom: 3px solid #f46868;
+		}
+		&:last-child
+		{
+			float: right;
+		}
+	}
+}
+
+.shelf_list
+{
+	> div
+	{
+		margin-bottom: 10px;
+	}
+	.cart_btn
+	{
+		margin: 0;
+	}
+}
+
+.shelf_btn
+{
+	overflow: hidden;
+
+	width: 100%;
+	height: 33px;
+	a
+	{
+		line-height: 33px;
+
+		float: left;
+
+		width: 49%;
+		height: 33px;
+
+		text-align: center;
+
+		color: #666;
+		background: #fff;
+		&:last-child
+		{
+			float: right;
+
+			color: #fff;
+			background: #f46868;
+		}
+	}
+}
+
+.person_head
+{
+	height: 80px;
+
+	background: url(../images/person_bg.jpg) no-repeat (center / 100%);
+	dl
+	{
+		float: left;
+
+		height: 55px;
+		padding-top: 12.6px;
+		padding-left: 40px;
+	}
+	dt
+	{
+		float: left;
+		overflow: hidden;
+
+		width: 55px;
+		height: 55px;
+		margin-right: 15px;
+
+		border-radius: 99px;
+	}
+	dd
+	{
+		font-size: 14px;
+		line-height: 55px;
+
+		float: left;
+
+		color: #000;
+	}
+	a
+	{
+		float: right;
+
+		width: 38.6px;
+		height: 34px;
+		margin-top: 5px;
+		margin-right: 10px;
+
+		background: url(../images/shop_icon1.png) no-repeat (center / 100%) 100%;
+	}
+}
+
+.person_con
+{
+	padding: 15px 10px 0 10px;
+
+	color: #555;
+	background: #f7f7f7;
+}
+
+.manage
+{
+	padding: 10px 5px;
+
+	background: #fff;
+	h3
+	{
+		font-size: 12px;
+		line-height: 22.6px;
+
+		height: 22.6px;
+		padding-left: 10px;
+
+		border-bottom: 1px solid #e3e3e3;
+		a
+		{
+			line-height: 22.6px;
+
+			float: right;
+
+			color: #f46868;
+		}
+	}
+	div
+	{
+		overflow: hidden;
+
+		padding-top: 20px;
+		a
+		{
+			float: left;
+
+			width: 50%;
+			height: 44px;
+		}
+		img
+		{
+			max-height: 100%;
+			margin: 0 auto;
+		}
+	}
+}
+
+.person_link
+{
+	line-height: 40px;
+
+	display: block;
+
+	-webkit-box-sizing: border-box;
+	height: 40px;
+	margin-top: 5px;
+	padding: 0 5px 0 15px;
+
+	background: #fff;
+	span
+	{
+		line-height: 40px;
+
+		float: right;
+	}
+}
+
+.dig_box
+{
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, .8);
+	div
+	{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+
+		width: 150px;
+		height: auto;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		-webkit-transform: translate(-50%, -50%);
+		text-align: center;
+
+		color: #fff;
+		border-radius: 10px;
+		background: #f46868;
+	}
+}
